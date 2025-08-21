@@ -5,8 +5,8 @@
     "margin-bottom": 0,
     "margin-top": 8,
     "position": "top",
-    "margin-right": 200,
-    "margin-left": 200,
+    "margin-right": 20,
+    "margin-left": 20,
 
     "modules-left": ["custom/applauncher","hyprland/workspaces", "tray"],
     "modules-center": ["hyprland/window"],
@@ -22,7 +22,7 @@
     },
 
     "custom/applauncher": {
-        "format": "󰻈",
+        "format": "󰻈 ",
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
         "tooltip": false
     },
