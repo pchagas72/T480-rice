@@ -1,0 +1,45 @@
+[font]
+size = 20
+
+[font.normal]
+family = "Scientifica"
+style = "Regular"
+
+[scrolling]
+history = 10000
+
+[window]
+opacity = 1
+title = "Alacritty"
+
+[window.padding]
+x = 9
+y = 9
+
+[colors.primary]
+background = '#0D0A13'
+foreground = '#c6d7d8'
+
+[colors.cursor]
+text = '#c6d7d8'
+cursor = '#c6d7d8'
+
+[colors.normal]
+black   = '#0D0A13'
+red     = '#54A4B0'
+green   = '#6BB4BD'
+yellow  = '#59B6C2'
+blue    = '#76BAC2'
+magenta = '#76C1C9'
+cyan    = '#82BEC4'
+white   = '#c6d7d8'
+
+[colors.bright]
+black   = '#8a9697'
+red     = '#54A4B0'
+green   = '#6BB4BD'
+yellow  = '#59B6C2'
+blue    = '#76BAC2'
+magenta = '#76C1C9'
+cyan    = '#82BEC4'
+white   = '#c6d7d8'

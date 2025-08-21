@@ -1,0 +1,14 @@
+show=drun
+term=alacritty
+show_all=true
+gtk_dark=false
+location=center
+insensitive=true
+allow_markup=true
+allow_images=true
+line_wrap=word
+lines=4
+width=500
+no_actions=true
+prompt= Search
+hide_scroll=true

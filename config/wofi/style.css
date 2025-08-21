@@ -1,0 +1,64 @@
+* {
+  font-family: 'scientifica';
+  background: transparent;
+  color: #c6d7d8;
+}
+
+#window {
+  color: #c6d7d8;
+  border-color: #54A4B0;
+  border-style: solid;
+  border-width: 1px;
+
+  /*Linear gradient background instead of standard background, because it makes cleaner border-radius cuts, issa bug :p*/
+  background-image: linear-gradient(to bottom, #0D0A13 100%);
+  border-radius: 0px;
+}
+#scroll {
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #d8cab8;
+}
+#inner-box {
+  padding-top: 12px;
+}
+#entry {
+  border-style: none;
+  border-color: #54A4B0;
+  color: #c6d7d8;
+  padding: 6px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 12;
+
+  border-radius: 12px;
+}
+
+#entry:selected {
+  background: #27232b;
+  color: #6BB4BD;
+  font-weight: bold;
+  outline: none;
+}
+
+#input {
+  background-color: #0D0A13;
+  color: #C6D7D8;
+  border-color: #54A4B0;
+
+  font-style: normal;
+
+  padding: 12px;
+  margin: 8px;
+}
+#input:focus {
+  background: #27232b;
+  background-color: #27232b;
+  border-color: #293044;
+  font-style: italic;
+}
+
+#img {
+  padding: 4px;
+  margin-right: 6px;
+}
