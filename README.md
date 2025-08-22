@@ -9,6 +9,7 @@ TODO:
 - Widgets
     - Add eww or quickshell.
     - Notification widgets.
+    - Add desktop panel if there are no windows open in current workspace.
 
 - Waybar
     - Add progress bar to audio and battery.
