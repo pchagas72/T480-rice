@@ -17,7 +17,7 @@ x = 9
 y = 9
 
 [colors.primary]
-background = '#0D0A13'
+background = '#0f131e'
 foreground = '#c6d7d8'
 
 [colors.cursor]
