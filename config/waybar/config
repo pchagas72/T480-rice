@@ -10,7 +10,7 @@
 
     "modules-left": ["clock","network", "tray"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["battery","backlight-slider","pulseaudio"],
+    "modules-right": ["battery","backlight","pulseaudio"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -27,13 +27,27 @@
         "icons": {
             "blueman": "bluetooth",
             "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        }
+        },
     },
 
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "tooltip": false,
+        "format-icons": {
+            "default": [
+            "  █░░░░░░░░░",
+            "  ██░░░░░░░░",
+            "  ███░░░░░░░",
+            "  ████░░░░░░",
+            "  █████░░░░░",
+            "  ██████░░░░",
+            "  ███████░░░",
+            "  ████████░░",
+            "  █████████░",
+            "  ██████████",
+            ],
+            }
     },
 
     "custom/applauncher": {

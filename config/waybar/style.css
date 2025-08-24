@@ -1,6 +1,6 @@
 * {
     font-family: 'GohuFont 11 Nerd Font Propo';
-    font-size: 18px;
+    font-size: 16px;
     padding: 0px;
     background: transparent;
 }
@@ -18,7 +18,8 @@ window#waybar {
 #custom-applauncher,
 #tray,
 #workspaces,
-#pulseaudio{
+#pulseaudio,
+#backlight{
     margin: 6px;
     margin-right: 7px;
     padding: 6px 10px;
@@ -27,7 +28,8 @@ window#waybar {
 }
 
 #battery,
-#pulseaudio{
+#pulseaudio,
+#backlight{
     border: 2px solid;
 }
 
@@ -40,7 +42,8 @@ window#waybar {
 
 }
 
-#pulseaudio:hover {
+#pulseaudio:hover,
+#backlight:hover{
     background-image: linear-gradient(to bottom, #54A4B0 100%);
     color: #0D0A13;
     transition-duration: 120ms;
