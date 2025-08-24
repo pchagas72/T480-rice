@@ -16,3 +16,10 @@ TODO:
 
 - Wallpaper
     - Create my own wallpapers.
+    
+- Neovim
+    - Add a new neovim config.
+
+- Extra
+    - Edit hyprlock config file.
+    - Add fingerprint lock-screen script.
