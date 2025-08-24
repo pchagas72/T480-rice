@@ -8,9 +8,9 @@
     "margin-right": 20,
     "margin-left": 20,
 
-    "modules-left": ["custom/applauncher","hyprland/workspaces", "tray"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "battery", "pulseaudio", "clock"],
+    "modules-left": ["clock","network", "tray"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["battery","backlight-slider","pulseaudio"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -21,9 +21,30 @@
         "disable-scroll": true
     },
 
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+            "blueman": "bluetooth",
+            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        }
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+
     "custom/applauncher": {
-        "format": "󰻈 ",
+        "format": "󰻈",
         "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+        "tooltip": false
+    },
+
+    "custom/bluetooth": {
+        "format": "[ 󰂯 ]",
+        "on-click": "blueman-manager",
         "tooltip": false
     },
 
@@ -38,27 +59,35 @@
     },
 
     "network": {
-        "format-wifi": "   {bandwidthDownBits}",
-        "format-ethernet": "   {bandwidthDownBits}",
-        "format-disconnected": "󰤮   No Network",
+        "format-wifi": " {bandwidthDownBits}",
+        "format-ethernet": " {bandwidthDownBits}",
+        "format-disconnected": "󰤮 No Network",
         "interval": 5,
         "tooltip": false
     },
 
     "pulseaudio": {
         "scroll-step": 5,
-        "max-volume": 150,
+        "max-volume": 100,
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-icons": [
-            " ",
-            " ",
-            "  "
-        ],
-        "nospacing": 1,
+        "format-icons": {
+            "default": [
+            "  █░░░░░░░░░",
+            "  ██░░░░░░░░",
+            "  ███░░░░░░░",
+            "  ████░░░░░░",
+            "  █████░░░░░",
+            "  ██████░░░░",
+            "  ███████░░░",
+            "  ████████░░",
+            "  █████████░",
+            "  ██████████",
+            ],
+ 
+            },
         "format-muted": " ",
         "on-click": "pavucontrol",
-        "tooltip": false
+        "tooltip": false,
     },
 
     "battery": {
@@ -71,10 +100,18 @@
         "format-plugged": " 󰂄 {capacity}%",
         "format-alt": "{icon} {time}",
         "format-full": " 󱈑  {capacity}%",
-        "format-icons": [
-            " 󱊡 ",
-            " 󱊢 ",
-            " 󱊣 "
-        ]
+        "format-icons": {
+            "default": [
+            "󱊡  █░░░░░░░░░",
+            "󱊡  ██░░░░░░░░",
+            "󱊡  ███░░░░░░░",
+            "󱊢  ████░░░░░░",
+            "󱊢  █████░░░░░",
+            "󱊢  ██████░░░░",
+            "󱊢  ███████░░░",
+            "󱊣  ████████░░",
+            "󱊣  █████████░",
+            "󱊣  ██████████",
+            ]}
     }
 }
