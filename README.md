@@ -12,7 +12,7 @@ TODO:
     - Add desktop panel if there are no windows open in current workspace.
 
 - Waybar
-    - Add progress bar to audio and battery.
+    - Add progress bar to audio and battery. | Done
 
 - Wallpaper
     - Create my own wallpapers.
