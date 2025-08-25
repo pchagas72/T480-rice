@@ -19,6 +19,8 @@ TODO:
     
 - Neovim
     - !Add a new neovim config. | Done
+    - !Add support for ECU programming.
+    - Add neovim colorcode plugin.
 
 - Extra
     - !Edit hyprlock config file.
