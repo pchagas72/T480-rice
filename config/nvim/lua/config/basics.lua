@@ -1,5 +1,6 @@
 vim.opt.guicursor = ""
 vim.cmd.colorscheme "tokyonight-night"
+vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

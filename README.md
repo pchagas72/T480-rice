@@ -13,6 +13,8 @@ TODO:
 
 - Waybar
     - Add progress bar to audio and battery. | Done
+    - Add better logic to colors. | Done
+    - Add calendar. | Done
 
 - Wallpaper
     - Create my own wallpapers.
@@ -23,5 +25,6 @@ TODO:
     - Add BetterTerm plugin. | Done
 
 - Extra
+    - !Add a .gitignore.
     - !Edit hyprlock config file.
     - !Add fingerprint lock-screen script.

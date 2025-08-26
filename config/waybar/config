@@ -32,6 +32,11 @@
 
         "backlight": {
             "device": "intel_backlight",
+            "states": {
+                "critical_high": 95,
+                "normal": 30,
+                "critical_low": 0
+            },
             "format": "{percent}% {icon}",
             "tooltip": false,
             "format-icons": {
@@ -102,6 +107,10 @@
         "pulseaudio": {
             "scroll-step": 5,
             "max-volume": 100,
+            "states": {
+                "warning": 30,
+                "critical": 15
+            },
             "format": "{icon} {volume}%",
             "format-icons": {
                 "default": [

@@ -119,12 +119,25 @@ tooltip{
 }
 
 #battery {
-    background-image: linear-gradient(to bottom, #141216 100%);
     color: #c6d7d8;
 }
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-    color: #1d2021;
-    background-color: #fc4649;
+    color: #fc4649;
+}
+
+#backlight {
+    color: #c6d7d8;
+}
+
+#backlight.critical_high,
+#backlight.critical_low{
+    color: #fc4649;
+}
+
+#pulseaudio.warning,
+#pulseaudio.critical,
+#pulseaudio.urgent {
+    color: #fc4649;
 }
