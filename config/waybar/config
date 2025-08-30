@@ -105,8 +105,8 @@
         },
 
         "pulseaudio": {
-            "scroll-step": 5,
-            "max-volume": 100,
+            "scroll-step": 0.5,
+            "max-volume": 150,
             "states": {
                 "warning": 30,
                 "critical": 15
