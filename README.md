@@ -3,6 +3,7 @@
 Dotfiles for my laptop.
 
 ![Desktop Screenshot](./screenshots/desktop.png)
+![Nitch Screenshot](./screenshots/desktop_nitch.png)
 
 TODO:
 
