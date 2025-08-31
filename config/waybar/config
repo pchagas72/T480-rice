@@ -8,7 +8,7 @@
         "margin-right": 20,
         "margin-left": 20,
 
-        "modules-left": ["clock","network", "tray"],
+        "modules-left": ["clock","network","memory","cpu","tray"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["battery","backlight","pulseaudio"],
 
@@ -167,5 +167,23 @@
                 "󰂄  ██████████",
                 ]
             }
+        },
+
+        "memory": {
+            "interval": 1,
+            "format": "{icon} {used}G",
+            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+            "format-icons": " "
+        },
+        "cpu": {
+            "interval": 1,
+            "states": {
+                "warning": 50,
+                "critical": 80
+            },
+            "format": "{icon} {usage}%",
+            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+            "format-icons": ""
         }
+
 }

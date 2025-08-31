@@ -23,6 +23,8 @@ tooltip{
 #tray,
 #workspaces,
 #pulseaudio,
+#memory,
+#cpu,
 #backlight{
     margin: 6px;
     margin-right: 7px;
@@ -121,23 +123,20 @@ tooltip{
 #battery {
     color: #c6d7d8;
 }
-#battery.warning,
-#battery.critical,
-#battery.urgent {
-    color: #fc4649;
-}
 
 #backlight {
     color: #c6d7d8;
 }
 
 #backlight.critical_high,
-#backlight.critical_low{
-    color: #fc4649;
-}
-
+#backlight.critical_low,
 #pulseaudio.warning,
 #pulseaudio.critical,
-#pulseaudio.urgent {
+#pulseaudio.urgent,
+#battery.warning,
+#battery.critical,
+#battery.urgent,
+#cpu.warning,
+#cpu.critical{
     color: #fc4649;
 }
