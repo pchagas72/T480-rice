@@ -16,6 +16,21 @@ return {
     },
 
     config = function()
+
+        -- ESP PROGRAMMING
+        local lspconfig = require("lspconfig")
+
+        lspconfig.clangd.setup({
+            cmd = {
+                "clangd",
+                "--compile-commands-dir=build",
+                "--query-driver=/home/pedro/.local/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc"
+            },
+
+            -- Tell Neovim to start clangd for C and C++ files
+            filetypes = { "c", "cpp" },
+        })
+
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
@@ -24,12 +39,12 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        require("fidget").setup({})
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "lua_ls",
-            },
+            require("fidget").setup({})
+            require("mason").setup()
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "lua_ls",
+                },
             handlers = {
                 function(server_name) -- default handler (optional)
 
@@ -86,6 +101,7 @@ return {
                 header = "",
                 prefix = "",
             },
-        })
+       })
     end
 }
+

@@ -20,14 +20,17 @@ zmodload zsh/complist
 compinit
 
 # Variables
-export GOPATH=$HOME/.local/src/go
+export GOPATH=$HOME/.local/go
+export IDF_TOOLS_PATH=$HOME/.local/espressif/
 export PATH=$PATH:$HOME/.local/bin/
 
 # Alias
 alias ls="ls --color"
 alias vim="nvim"
+alias get_idf=". $HOME/Downloads/github/esp-idf/export.sh"
 
 # Plugins
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/zsh-vi-mode.zsh
 source ~/.config/zsh/zsh-autosuggestions.zsh
+source ~/.zshenv
