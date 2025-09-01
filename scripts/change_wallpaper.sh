@@ -1,19 +1,19 @@
 #!/bin/bash
 
-JAPAN_CONFIG=$HOME/.local/rice/wallpaper_rotation/japan.conf
-FISHES_CONFIG=$HOME/.local/rice/wallpaper_rotation/two_fishes.conf
-KNIGHT_CONFIG=$HOME/.local/rice/wallpaper_rotation/japan.conf
+JAPAN_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/japan.conf
+KNIGHT_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/hollow_knight.conf
+FISHES_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/two_fishes.conf
 
 for arg in "$@"; do
   case $arg in
     --japan)
-        pkill hyprpaper; hyprpaper --config ~/.local/rice/wallpaper_rotation/japan.conf & disown
+        pkill hyprpaper; hyprpaper --config $JAPAN_CONFIG & disown
       ;;
     --knight)
-        pkill hyprpaper; hyprpaper --config ~/.local/rice/wallpaper_rotation/hollow_knight.conf & disown
+        pkill hyprpaper; hyprpaper --config $KNIGHT_CONFIG & disown
       ;;
     --fishes)
-        pkill hyprpaper; hyprpaper --config ~/.local/rice/wallpaper_rotation/two_fishes.conf & disown
+        pkill hyprpaper; hyprpaper --config $FISHES_CONFIG & disown
       ;;
     *)
       echo "Unknown argument: $arg"
@@ -24,4 +24,4 @@ done
 # Change this later, only doing it because hyprpaper opens on top of eww
 pkill -9 eww
 eww daemon
-start_eww.sh
+toggle_eww.sh --open
