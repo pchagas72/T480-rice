@@ -7,8 +7,8 @@ Dotfiles for my laptop.
 
 TODO:
 
-- Widgets
-    - Add eww or quickshell. | Done
+- Eww 
+    - Add spotify widget (python backend)
     - Notification widgets.
     - Add desktop panel if there are no windows open in current workspace. | Done
 
@@ -26,7 +26,6 @@ TODO:
     - Add BetterTerm plugin. | Done
 
 - Extra
-    - !Add a .gitignore.
     - !Edit hyprlock config file.
     - !Add fingerprint lock-screen script.
     - Add pywal support
