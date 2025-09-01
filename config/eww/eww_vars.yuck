@@ -1,6 +1,3 @@
-; sup cuh
-; Hello matx
-
 (defpoll DAY :interval "1s" '~/.config/eww/scripts/day_format.sh')
 (defpoll MONTH :interval "1s" '~/.config/eww/scripts/month_format.sh')
 (defpoll YEAR :interval "1s" '~/.config/eww/scripts/year_format.sh')

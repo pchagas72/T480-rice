@@ -29,6 +29,7 @@ TODO:
     - !Add a .gitignore.
     - !Edit hyprlock config file.
     - !Add fingerprint lock-screen script.
+    - Add pywal support
 
 ## Extra credits
 
