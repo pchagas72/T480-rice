@@ -1,0 +1,88 @@
+* {
+  all: unset;
+  background: transparent;
+  font-family: "scientifica";
+}
+
+window {
+  background: #141216;
+}
+
+.container {
+  background-color: #141216;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c6d7d8;
+  color: #c6d7d8;
+}
+.userinfo-parent {
+  background-color: #141217;
+  color: #c6d7d8;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c6d7d8;
+}
+.userinfo-child {
+  color: #c6d7d8;
+}
+.label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button-label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.completelytrans {
+  background: none;
+}
+
+.button {
+  margin: 10px;
+}
+.button:hover {
+  background-color: #54a4b0;
+  color: #0D0A13;
+  transition-duration: 150ms;
+}
+.button:active {
+  background-color: #54A4b0;
+  color: #0D0A13;
+  transition-duration: 150ms;
+}
+
+.poweroff-button {
+  margin: 10px;
+}
+.poweroff-button:hover {
+  background-color: #fc4649;
+  color: #141216;
+  transition-duration: 150ms;
+}
+.poweroff-button:active {
+  background-color: #862526;
+  color: #141216;
+  transition-duration: 150ms;
+}
+
+.suspend-button {
+  margin: 10px;
+}
+.suspend-button:hover {
+  background-color: #7b91fc;
+  color: #141216;
+  transition-duration: 150ms;
+}
+.suspend-button:active {
+  background-color: #515ea1;
+  color: #141216;
+  transition-duration: 150ms;
+}
+
+.icon-label {
+  font-size: 45px;
+  font-weight: normal;
+}

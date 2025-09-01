@@ -29,3 +29,7 @@ TODO:
     - !Add a .gitignore.
     - !Edit hyprlock config file.
     - !Add fingerprint lock-screen script.
+
+## Extra credits
+
+- [Diinki retrofuture rice (eww)](https://github.com/diinki/diinki-retrofuture/)
