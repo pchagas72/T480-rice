@@ -86,3 +86,16 @@ window {
   font-size: 45px;
   font-weight: normal;
 }
+
+.button_wallpaper {
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  margin: 10px;
+}
+.button_wallpaper:hover {
+  background-position: center;
+  background-size: 110px;
+  transition-duration: 150ms;
+}
+
