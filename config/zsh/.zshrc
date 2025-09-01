@@ -30,7 +30,7 @@ export PATH=$PATH:$HOME/.local/bin/
 # Alias
 alias ls="ls --color"
 alias vim="nvim"
-alias get_idf=". $HOME/Downloads/github/esp-idf/export.sh"
+alias get_idf=". $HOME/.local/esp/esp-idf/export.sh"
 
 # Plugins
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
