@@ -8,7 +8,7 @@ for arg in "$@"; do
                 eww close yearbox
                 eww close monthbox
                 eww close daybox
-                eww close clockbox
+                eww close leftbox
                 eww close closewallpapersbox
                 eww close wallpapersbox
             fi
@@ -19,7 +19,7 @@ for arg in "$@"; do
                 eww open --screen 0 yearbox
                 eww open --screen 0 monthbox
                 eww open --screen 0 daybox
-                eww open --screen 0 clockbox
+                eww open --screen 0 leftbox
             fi
             ;;
         --toggle)
@@ -28,13 +28,13 @@ for arg in "$@"; do
                 eww open --screen 0 yearbox
                 eww open --screen 0 monthbox
                 eww open --screen 0 daybox
-                eww open --screen 0 clockbox
+                eww open --screen 0 leftbox
             else 
                 eww close userinfo
                 eww close yearbox
                 eww close monthbox
                 eww close daybox
-                eww close clockbox
+                eww close leftbox
                 eww close closewallpapersbox
                 eww close wallpapersbox
             fi

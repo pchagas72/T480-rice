@@ -1,25 +1,7 @@
 (include "eww_vars.yuck")
 
-(defwidget daybox []
-  (box :height "100" :width "100" :halign "center" :valign "center" :class "container"
-    (label :class "label"  :text DAY)
-  )
-)
-
-(defwidget monthbox []
-  (box :height "100" :width "100" :halign "center" :valign "center" :class "container"
-    (label :class "label"  :text MONTH)
-  )
-)
-
-(defwidget yearbox []
-  (box :height "100" :width "100" :halign "center" :valign "center" :class "container"
-    (label :class "label"  :text YEAR)
-  )
-)
-
 (defwidget userinfobox []
-  (centerbox :height "100" :width "340" :halign "center" :valign "center" :class "userinfo-parent"
+  (centerbox :height "100" :width "100" :halign "center" :valign "center" :class "userinfo-parent" :orientation "v"
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
       (button :onclick "alacritty & disown" :class "button"
         (label :class "icon-label"  :text "")
@@ -46,9 +28,8 @@
     )
 )
 
-
 (defwidget powermenu []
-  (centerbox :height "100" :width "340" :halign "center" :valign "center" :class "userinfo-parent"
+  (centerbox :height "100" :width "100" :halign "center" :valign "center" :class "userinfo-parent" :orientation "v"
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
       (button :onclick "systemctl poweroff" :class "poweroff-button"
         (label :class "icon-label"  :text "󰐥")
@@ -67,20 +48,8 @@
   )
 )
 
-(defwidget imagemenubox []
-  (box :height "400" :width "200" :halign "center" :valign "center" :class "container"
-    (label :class "label"  :text DAY)
-  )
-)
-
-(defwidget clockbox []
-  (box :height "100" :width "340" :halign "center" :valign "center" :class "container" :orientation "v"
-    (label :class "label"  :text HOUR)
-  )
-  )
-
 (defwidget wallpapersbox []
-    (box :height "340" :width "120" :halign "center" :valign "center" :class "container" :orientation "v"
+    (box :height "300" :width "120" :halign "center" :valign "center" :class "container" :orientation "v"
         (button :onclick "change_wallpaper.sh --knight" :style "background-image: url('images/icons/hollow_knight.png');" :class "button_wallpaper")
         (button :onclick "change_wallpaper.sh --japan" :style "background-image: url('images/icons/japan.png');" :class "button_wallpaper")
         (button :onclick "change_wallpaper.sh --fishes" :style "background-image: url('images/icons/two_fishes.png');" :class "button_wallpaper")
