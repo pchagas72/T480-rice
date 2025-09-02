@@ -8,7 +8,9 @@ Dotfiles for my laptop.
 TODO:
 
 - Eww 
-    - Add spotify widget (python backend)
+    - Add spotify widget
+    - Add wofi widget
+    - Add apps widget
     - Notification widgets.
     - Add desktop panel if there are no windows open in current workspace. | Done
 
