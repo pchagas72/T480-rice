@@ -4,6 +4,7 @@ for arg in "$@"; do
     case $arg in
         --close)
             if [[ $(eww active-windows) != "" ]]; then
+                eww close closeappmenubox
                 eww close userinfo
                 eww close yearbox
                 eww close monthbox
@@ -11,6 +12,7 @@ for arg in "$@"; do
                 eww close leftbox
                 eww close closewallpapersbox
                 eww close wallpapersbox
+                eww close appmenubox
             fi
             ;;
         --open)
@@ -37,6 +39,8 @@ for arg in "$@"; do
                 eww close leftbox
                 eww close closewallpapersbox
                 eww close wallpapersbox
+                eww close appmenubox
+                eww close closeappmenubox
             fi
             ;;
         *)

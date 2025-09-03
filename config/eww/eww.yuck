@@ -49,3 +49,27 @@
     :anchor "top right")
   (closewallpapersbox)
 )
+
+(defwindow appmenubox
+  :monitor '[0]'
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :width "700"
+    :height "350"
+    :anchor "center")
+  (appmenubox)
+)
+
+(defwindow closeappmenubox
+  :monitor '[0]'
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "11"
+    :y "201"
+    :width "100"
+    :height "100"
+    :anchor "top right")
+  (closeappmenubox)
+)
