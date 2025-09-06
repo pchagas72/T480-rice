@@ -14,6 +14,7 @@ TODO:
     - Notification widgets.
     - Add desktop panel if there are no windows open in current workspace. | Done
     - Make toggle permanent.
+    - Make scripts more efficient and concise
 
 - Waybar
     - Add progress bar to audio and battery. | Done
