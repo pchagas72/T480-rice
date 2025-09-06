@@ -9,7 +9,6 @@ window#waybar {
     /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
     background-image: linear-gradient(to bottom, #141216 100%);
     padding: 5px;
-    border: solid 2px #54A4B0;
 }
 
 tooltip{

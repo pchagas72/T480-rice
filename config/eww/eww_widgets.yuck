@@ -53,10 +53,12 @@
         (box :height "300" :width "120" :halign "center" :valign "center" :class "container_borderless" :orientation "v"
             (button :onclick "change_wallpaper.sh --hornet" :style "background-image: url('images/icons/hornet.png');" :class "button_wallpaper")
             (button :onclick "change_wallpaper.sh --knight" :style "background-image: url('images/icons/hollow_knight.png');" :class "button_wallpaper")
+            (button :onclick "change_wallpaper.sh --nasa" :style "background-image: url('images/icons/nasa.png');" :class "button_wallpaper")
         )
         (box :height "300" :width "120" :halign "center" :valign "center" :class "container_borderless" :orientation "v"
             (button :onclick "change_wallpaper.sh --japan" :style "background-image: url('images/icons/japan.png');" :class "button_wallpaper")
             (button :onclick "change_wallpaper.sh --fishes" :style "background-image: url('images/icons/two_fishes.png');" :class "button_wallpaper")
+            (button :onclick "change_wallpaper.sh --market" :style "background-image: url('images/icons/market.png');" :class "button_wallpaper")
         )
     )
 )
@@ -101,5 +103,11 @@
         (button :onclick "eww close appmenubox closeappmenubox" :class "button"
             (label :class "icon-label"  :text "󰅗")
         )
+    )
+)
+
+(defwidget infobox []
+    (box :height "500" :width "350" :halign "center" :valign "center" :class "userinfo-child"
+        (label :text "Digger")
     )
 )

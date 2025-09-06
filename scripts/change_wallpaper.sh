@@ -4,6 +4,8 @@ JAPAN_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/japan.conf
 KNIGHT_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/hollow_knight.conf
 FISHES_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/two_fishes.conf
 HORNET_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/hornet.conf
+NASA_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/nasa.conf
+MARKET_CONFIG=$HOME/git/T480-rice/config/hypr/hyprpaper/market.conf
 
 for arg in "$@"; do
   case $arg in
@@ -18,6 +20,12 @@ for arg in "$@"; do
       ;;
     --hornet)
         pkill hyprpaper; hyprpaper --config $HORNET_CONFIG & disown
+      ;;
+    --nasa)
+        pkill hyprpaper; hyprpaper --config $NASA_CONFIG & disown
+      ;;
+    --market)
+        pkill hyprpaper; hyprpaper --config $MARKET_CONFIG & disown
       ;;
     *)
       echo "Unknown argument: $arg"

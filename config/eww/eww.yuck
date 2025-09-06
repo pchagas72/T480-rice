@@ -73,3 +73,15 @@
     :anchor "top right")
   (closeappmenubox)
 )
+
+(defwindow infobox
+  :monitor '[0]'
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "22"
+    :width "100"
+    :height "100"
+    :anchor "center left")
+  (infobox)
+)
