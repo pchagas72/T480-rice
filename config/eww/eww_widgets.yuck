@@ -1,7 +1,7 @@
 (include "eww_vars.yuck")
 
 (defwidget userinfobox []
-  (centerbox :height "100" :width "100" :halign "center" :valign "center" :class "userinfo-parent" :orientation "v"
+  (centerbox :height "100" :width "300" :halign "center" :valign "center" :class "userinfo-parent" :orientation "h"
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
       (button :onclick "eww open appmenubox; eww open closeappmenubox" :class "button"
         (label :class "icon-label"  :text "󰀻")
@@ -20,16 +20,8 @@
   )
 )
 
-(defwidget closewallpapersbox []
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-        (button :onclick "eww close wallpapersbox closewallpapersbox" :class "button"
-            (label :class "icon-label"  :text "")
-        )
-    )
-)
-
 (defwidget powermenu []
-  (centerbox :height "100" :width "100" :halign "center" :valign "center" :class "userinfo-parent" :orientation "v"
+  (centerbox :height "100" :width "300" :halign "center" :valign "center" :class "userinfo-parent" :orientation "h"
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
       (button :onclick "systemctl poweroff" :class "poweroff-button"
         (label :class "icon-label"  :text "󰐥")
@@ -49,16 +41,22 @@
 )
 
 (defwidget wallpapersbox []
-    (box :height "300" :width "120" :halign "center" :valign "center" :class "container" :orientation "h"
-        (box :height "300" :width "120" :halign "center" :valign "center" :class "container_borderless" :orientation "v"
+    (box :height "300" :width "340" :halign "center" :valign "center" :class "container_borderless" :orientation "v"
+        (box :height "100" :width "340" :halign "center" :valign "center" :class "container_borderless" :orientation "h"
             (button :onclick "change_wallpaper.sh --hornet" :style "background-image: url('images/icons/hornet.png');" :class "button_wallpaper")
             (button :onclick "change_wallpaper.sh --knight" :style "background-image: url('images/icons/hollow_knight.png');" :class "button_wallpaper")
-            (button :onclick "change_wallpaper.sh --nasa" :style "background-image: url('images/icons/nasa.png');" :class "button_wallpaper")
         )
-        (box :height "300" :width "120" :halign "center" :valign "center" :class "container_borderless" :orientation "v"
+        (box :height "100" :width "340" :halign "center" :valign "center" :class "container_borderless" :orientation "h"
             (button :onclick "change_wallpaper.sh --japan" :style "background-image: url('images/icons/japan.png');" :class "button_wallpaper")
             (button :onclick "change_wallpaper.sh --fishes" :style "background-image: url('images/icons/two_fishes.png');" :class "button_wallpaper")
-            (button :onclick "change_wallpaper.sh --market" :style "background-image: url('images/icons/market.png');" :class "button_wallpaper")
+        )
+    )
+)
+
+(defwidget closewallpapersbox []
+    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
+        (button :onclick "eww close wallpapersbox closewallpapersbox" :class "button"
+            (label :class "icon-label"  :text "")
         )
     )
 )
@@ -107,7 +105,7 @@
 )
 
 (defwidget infobox []
-    (box :height "500" :width "350" :halign "center" :valign "center" :class "userinfo-child"
-        (label :text "Digger")
+    (box :height "280" :width "300" :halign "center" :valign "center" :class "infobox"
+        (label :markup TIME)
     )
 )

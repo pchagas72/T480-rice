@@ -9,7 +9,7 @@ window {
 }
 
 .container {
-  background-color: #0d0a13;
+  background-color: rgba(13,10,19,0.0);
   border-width: 1px;
   border-style: solid;
   border-color: #54a4b0;
@@ -17,18 +17,14 @@ window {
 }
 
 .container_borderless {
-  background-color: #0d0a13;
+  background-color: rgba(13,10,19,0.0);
   color: #c6d7d8;
 }
 
 
 .userinfo-parent {
-  background-color: #0d0a13;
+  background-color: rgba(13,10,19,0.0);
   color: #c6d7d8;
-
-  border-width: 1px;
-  border-style: solid;
-  border-color: #54a4b0;
 }
 
 .userinfo-child {
@@ -113,4 +109,9 @@ window {
   background-position: center;
   background-size: 110px;
   transition-duration: 150ms;
+}
+
+.infobox{
+  font-size: 25px;
+  background-color: rgba(13,10,19,0.0);
 }
