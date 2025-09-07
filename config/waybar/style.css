@@ -1,3 +1,16 @@
+/* Catppuccin Mocha Palette */
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+
+@define-color blue #89b4fa;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color yellow #f9e2af;
+
 * {
     font-family: 'GohuFont 11 Nerd Font Propo';
     font-size: 12px;
@@ -6,13 +19,14 @@
 }
 
 window#waybar {
-    /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
-    background-image: linear-gradient(to bottom, #141216 100%);
+    background-color: @base;
     padding: 5px;
 }
 
-tooltip{
-    background-image: linear-gradient(to bottom, #141216 100%);
+tooltip {
+    background-color: @mantle;
+    border: 1px solid @mauve;
+    border-radius: 8px;
 }
 
 #battery,
@@ -24,72 +38,71 @@ tooltip{
 #pulseaudio,
 #memory,
 #cpu,
-#backlight{
+#backlight {
     margin: 6px;
     margin-right: 7px;
     padding: 6px 10px;
-    color: #c6d7d8;
+    color: @text;
     transition-duration: 120ms;
 }
 
 #network:hover,
 #clock:hover,
-#tray:hover{
-    border-bottom: 2px solid
+#tray:hover {
+    border-bottom: 2px solid @mauve;
 }
 
 #battery,
 #pulseaudio,
-#backlight{
+#backlight {
     border: 2px solid;
+    border-radius: 8px;
 }
 
-#clock calendar{
-    background-image: linear-gradient(to bottom, #141216 100%);
+#clock calendar {
+    background-color: @mantle;
+    border: 1px solid @mauve;
+    border-radius: 8px;
 }
 
 #window {
-
     margin: 6px;
     padding: 4px 8px;
-    color: #c6d7d8;
+    color: @text;
     transition-duration: 120ms;
-
 }
 
 #pulseaudio:hover,
-#backlight:hover{
-    background-image: linear-gradient(to bottom, #54A4B0 100%);
-    color: #0D0A13;
+#backlight:hover,
+#custom-applauncher:hover {
+    background-color: @blue;
+    color: @crust;
     transition-duration: 120ms;
+    border-radius: 8px;
 }
 
 #custom-applauncher {
     font-weight: bold;
     transition-duration: 120ms;
 }
-#custom-applauncher:hover {
-    background-image: linear-gradient(to bottom, #54A4B0 100%);
-    color: #0D0A13;
-    transition-duration: 120ms;
-}
 
 #tray menu {
-    background-color: #141216;
-    color: #d8cab8;
+    background-color: @mantle;
+    color: @text;
     padding: 4px;
+    border-radius: 8px;
 }
+
 #tray menu menuitem {
-    background-image: linear-gradient(to bottom, #27232b 100%);
+    background-color: @base;
     margin: 3px;
-    color: #C6D7D8;
+    color: @text;
     border-radius: 4px;
-    border-style: solid;
-    border-color: #27232b;
 }
+
 #tray menu menuitem:hover {
-    background-image: linear-gradient(to bottom, #27232b 100%);
-    color: #ac82e9;
+    background-color: @base;
+    color: @mauve;
     font-weight: bold;
 }
 
@@ -98,33 +111,32 @@ tooltip{
     all: initial;
     min-width: 0;
     font-weight: bold;
-    color: #c6d7d8;
+    color: @subtext0;
     margin-right: 0.2cm;
     margin-left: 0.2cm;
 }
 
 #workspaces button:hover {
     transition-duration: 120ms;
-    color: #54A4B0;
+    color: @blue;
 }
+
 #workspaces button.focused {
-    color: #54A4B0;
+    color: @blue;
     font-weight: bold;
 }
+
 #workspaces button.active {
-    color: #54A4B0;
+    color: @blue;
     font-weight: bold;
 }
+
 #workspaces button.urgent {
-    color: #fcb167;
+    color: @yellow;
 }
 
-#battery {
-    color: #c6d7d8;
-}
-
-#backlight {
-    color: #c6d7d8;
+#battery, #backlight {
+    color: @text;
 }
 
 #backlight.critical_high,
@@ -136,6 +148,6 @@ tooltip{
 #battery.critical,
 #battery.urgent,
 #cpu.warning,
-#cpu.critical{
-    color: #fc4649;
+#cpu.critical {
+    color: @red;
 }

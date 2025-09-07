@@ -1,3 +1,13 @@
+/* Catppuccin Mocha Palette */
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+$text: #cdd6f4;
+$blue: #89b4fa;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$lavender: #b4befe;
+
 * {
   all: unset;
   background: transparent;
@@ -5,30 +15,29 @@
 }
 
 window {
-  background: #0d0a13;
+  background: $crust;
 }
 
 .container {
-  background-color: rgba(13,10,19,0.0);
+  background-color: transparent;
   border-width: 1px;
   border-style: solid;
-  border-color: #54a4b0;
-  color: #c6d7d8;
+  border-color: $mauve;
+  color: $text;
 }
 
 .container_borderless {
-  background-color: rgba(13,10,19,0.0);
-  color: #c6d7d8;
+  background-color: transparent;
+  color: $text;
 }
 
-
 .userinfo-parent {
-  background-color: rgba(13,10,19,0.0);
-  color: #c6d7d8;
+  background-color: transparent;
+  color: $text;
 }
 
 .userinfo-child {
-  color: #c6d7d8;
+  color: $text;
 }
 
 .label {
@@ -50,14 +59,14 @@ window {
 }
 
 .button:hover {
-  background-color: #54a4b0;
-  color: #0D0A13;
+  background-color: $blue;
+  color: $crust;
   transition-duration: 150ms;
 }
 
 .button:active {
-  background-color: #54A4b0;
-  color: #0D0A13;
+  background-color: $blue;
+  color: $crust;
   transition-duration: 150ms;
 }
 
@@ -66,14 +75,14 @@ window {
 }
 
 .poweroff-button:hover {
-  background-color: #fc4649;
-  color: #141216;
+  background-color: $red;
+  color: $crust;
   transition-duration: 150ms;
 }
 
 .poweroff-button:active {
-  background-color: #862526;
-  color: #141216;
+  background-color: darken($red, 15%);
+  color: $crust;
   transition-duration: 150ms;
 }
 
@@ -82,14 +91,14 @@ window {
 }
 
 .suspend-button:hover {
-  background-color: #7b91fc;
-  color: #141216;
+  background-color: $lavender;
+  color: $crust;
   transition-duration: 150ms;
 }
 
 .suspend-button:active {
-  background-color: #515ea1;
-  color: #141216;
+  background-color: darken($lavender, 15%);
+  color: $crust;
   transition-duration: 150ms;
 }
 
@@ -111,7 +120,11 @@ window {
   transition-duration: 150ms;
 }
 
-.infobox{
+/* --- Infobox changes as requested --- */
+.infobox {
   font-size: 25px;
-  background-color: rgba(13,10,19,0.0);
+  /* Mantle color with 90% opacity */
+  background-color: rgba(24, 24, 37, 0.9);
+  padding: 5px;
+  border-radius: 8px;
 }

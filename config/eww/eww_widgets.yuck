@@ -13,7 +13,7 @@
       )
     )
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "eww open wallpapersbox && eww open closewallpapersbox"  :class "button"
+      (button :onclick "$HOME/.config/hypr/scripts/wallpaper_rotate.sh;"  :class "button"
         (label :class "icon-label"  :text "󰸉")
       )
       )
