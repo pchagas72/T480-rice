@@ -8,7 +8,7 @@
     (button :onclick "eww open powermenu" :class "button"
       (label :class "icon-label"  :text "⭘")
     )
-    (button :onclick "$HOME/.config/eww/scripts/update_wallpaper.sh"  :class "button"
+    (button :onclick "update_wallpaper.sh"  :class "button"
       (label :class "icon-label"  :text "󰸉")
     )
   )
@@ -26,22 +26,6 @@
       (label :class "icon-label"  :text "")
     )
   )
-)
-
-(defwidget wallpapersbox []
-    (box :height "350" :width "340" :class "container_borderless"
-        (scroll :vscroll true
-            (literal :content WALLPAPERS_WIDGET)
-        )
-    )
-)
-
-(defwidget closewallpapersbox []
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-       (button :onclick "eww close wallpapersbox closewallpapersbox" :class "button"
-            (label :class "icon-label"  :text "")
-        )
-    )
 )
 
 (defwidget appmenubox []

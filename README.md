@@ -8,13 +8,8 @@ Dotfiles for my laptop.
 TODO:
 
 - Eww 
-    - Add spotify widget | Done
-    - Add wofi widget
-    - Add apps widget | Done
-    - Notification widgets.
-    - Add desktop panel if there are no windows open in current workspace. | Done
-    - Make toggle permanent.
-    - Make scripts more efficient and concise
+    - I realized that the less widgets the cleaner it gets.
+    - Still need to make notification widgets.
 
 - Waybar
     - Add progress bar to audio and battery. | Done
