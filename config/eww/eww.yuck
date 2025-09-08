@@ -6,7 +6,7 @@
   :namespace "eww"
   :geometry (geometry
     :x "30"
-    :y "50"
+    :y "30"
     :width "100"
     :height "100"
     :anchor "bottom right")
@@ -19,33 +19,9 @@
   :namespace "eww"
   :geometry (geometry
     :x "30"
-    :y "50"
+    :y "30"
     :anchor "bottom right")
   (powermenu)
-)
-
-(defwindow wallpapersbox
-  :monitor '[0]'
-  :stacking "bg"
-  :namespace "eww"
-  :geometry (geometry
-    :x "30"
-    :y "170"
-    :anchor "bottom right")
-  (wallpapersbox)
-)
-
-(defwindow closewallpapersbox
-  :monitor '[0]'
-  :stacking "bg"
-  :namespace "eww"
-  :geometry (geometry
-    :x "30"
-    :y "50"
-    :width "100"
-    :height "100"
-    :anchor "bottom right")
-  (closewallpapersbox)
 )
 
 (defwindow appmenubox
@@ -65,7 +41,7 @@
   :namespace "eww"
   :geometry (geometry
     :x "256"
-    :y "50"
+    :y "30"
     :width "100"
     :height "100"
     :anchor "bottom right")
@@ -78,7 +54,7 @@
   :namespace "eww"
   :geometry (geometry
     :x "20"
-    :y "10"
+    :y "30"
     :width "100"
     :height "100"
     :anchor "top left")

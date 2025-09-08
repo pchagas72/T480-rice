@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_DIR="/home/pedro/media/wallpapers/catpuccin/"
+WALLPAPER_DIR="/home/pedro/media/wallpapers/rotate/"
 
 while true; do
     toggle_eww.sh --close
@@ -12,5 +12,5 @@ while true; do
 
     toggle_eww.sh --open
 
-    sleep 120
+    sleep 300
 done

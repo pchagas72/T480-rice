@@ -1,1 +1,2 @@
 (defpoll TIME :interval "1s" '~/.config/eww/scripts/date.sh')
+(defpoll WALLPAPERS_WIDGET :interval "1h" `~/.config/eww/scripts/generate_wallpapers.sh`)

@@ -13,7 +13,7 @@
       )
     )
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "$HOME/.config/hypr/scripts/wallpaper_rotate.sh;"  :class "button"
+      (button :onclick "$HOME/.config/eww/scripts/update_wallpaper.sh"  :class "button"
         (label :class "icon-label"  :text "󰸉")
       )
       )
@@ -41,14 +41,9 @@
 )
 
 (defwidget wallpapersbox []
-    (box :height "300" :width "340" :halign "center" :valign "center" :class "container_borderless" :orientation "v"
-        (box :height "100" :width "340" :halign "center" :valign "center" :class "container_borderless" :orientation "h"
-            (button :onclick "change_wallpaper.sh --hornet" :style "background-image: url('images/icons/hornet.png');" :class "button_wallpaper")
-            (button :onclick "change_wallpaper.sh --knight" :style "background-image: url('images/icons/hollow_knight.png');" :class "button_wallpaper")
-        )
-        (box :height "100" :width "340" :halign "center" :valign "center" :class "container_borderless" :orientation "h"
-            (button :onclick "change_wallpaper.sh --japan" :style "background-image: url('images/icons/japan.png');" :class "button_wallpaper")
-            (button :onclick "change_wallpaper.sh --fishes" :style "background-image: url('images/icons/two_fishes.png');" :class "button_wallpaper")
+    (box :height "350" :width "340" :class "container_borderless"
+        (scroll :vscroll true
+            (literal :content WALLPAPERS_WIDGET)
         )
     )
 )
