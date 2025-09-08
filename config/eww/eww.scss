@@ -8,8 +8,7 @@ $mauve: #cba6f7;
 $red: #f38ba8;
 $lavender: #b4befe;
 
-// --- Global variables for consistency ---
-$br: 12px; // Border Radius
+$br: 12px;
 
 * {
   all: unset;
@@ -18,14 +17,14 @@ $br: 12px; // Border Radius
 }
 
 window {
-  background: transparent; // Allows widget shadows to look correct
+  background: transparent;
 }
 
 .container {
   background-color: $mantle;
   color: $text;
   border-radius: $br;
-  box-shadow: 0 0 10px 2px $crust; // Add depth with a shadow
+  box-shadow: 0 0 10px 2px $crust;
 }
 
 .container_borderless {
@@ -33,23 +32,22 @@ window {
   color: $text;
 }
 
-/* --- Styles for the updated userinfobox --- */
 .userinfo-parent {
   background-color: $mantle;
   color: $text;
   padding: 0 10px;
+  border-radius: $br;
 }
 
 .userinfo-child {
   color: $text;
 }
 
-/* --- Styles for buttons in both widgets --- */
 .button {
   padding: 8px;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: $br - 4px;
+  border-radius: $br;
   transition: background-color 200ms ease-out, color 200ms ease-out;
 }
 
@@ -63,10 +61,10 @@ window {
   color: $crust;
 }
 
-/* --- Styles for the updated powermenu --- */
 .poweroff-button {
   margin: 10px;
   transition: background-color 200ms ease-out;
+  border-radius: $br;
 }
 
 .poweroff-button:hover {
@@ -87,10 +85,10 @@ window {
 
 .icon-label {
   font-size: 45px;
+  border-radius: $br;
   font-weight: normal;
 }
 
-/* --- Unchanged styles from your original file --- */
 .label {
   font-size: 24px;
   font-weight: bold;

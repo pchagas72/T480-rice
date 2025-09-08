@@ -1,6 +1,5 @@
 (include "eww_vars.yuck")
 
-;; -- Main control bar --
 (defwidget userinfobox []
   (box :class "userinfo-parent" :orientation "h" :spacing 5 :space-evenly true
     (button :onclick "eww open appmenubox; eww open closeappmenubox" :class "button"
@@ -15,7 +14,6 @@
   )
 )
 
-;; -- Power Menu (now vertical) --
 (defwidget powermenu []
   (box :class "container" :orientation "h" :spacing 5
     (button :onclick "systemctl poweroff" :class "poweroff-button"
@@ -29,8 +27,6 @@
     )
   )
 )
-
-;; --- UNCHANGED WIDGETS ---
 
 (defwidget wallpapersbox []
     (box :height "350" :width "340" :class "container_borderless"
