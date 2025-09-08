@@ -8,6 +8,9 @@ $mauve: #cba6f7;
 $red: #f38ba8;
 $lavender: #b4befe;
 
+// --- Global variables for consistency ---
+$br: 12px; // Border Radius
+
 * {
   all: unset;
   background: transparent;
@@ -15,15 +18,14 @@ $lavender: #b4befe;
 }
 
 window {
-  background: $crust;
+  background: transparent; // Allows widget shadows to look correct
 }
 
 .container {
-  background-color: transparent;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $mauve;
+  background-color: $mantle;
   color: $text;
+  border-radius: $br;
+  box-shadow: 0 0 10px 2px $crust; // Add depth with a shadow
 }
 
 .container_borderless {
@@ -31,15 +33,64 @@ window {
   color: $text;
 }
 
+/* --- Styles for the updated userinfobox --- */
 .userinfo-parent {
-  background-color: transparent;
+  background-color: $mantle;
   color: $text;
+  padding: 0 10px;
 }
 
 .userinfo-child {
   color: $text;
 }
 
+/* --- Styles for buttons in both widgets --- */
+.button {
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: $br - 4px;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+.button:hover {
+  background-color: $blue;
+  color: $crust;
+}
+
+.button:active {
+  background-color: darken($blue, 10%);
+  color: $crust;
+}
+
+/* --- Styles for the updated powermenu --- */
+.poweroff-button {
+  margin: 10px;
+  transition: background-color 200ms ease-out;
+}
+
+.poweroff-button:hover {
+  background-color: $red;
+  color: $crust;
+}
+
+.suspend-button {
+  margin: 10px;
+  border-radius: $br - 4px;
+  transition: background-color 200ms ease-out;
+}
+
+.suspend-button:hover {
+  background-color: $lavender;
+  color: $crust;
+}
+
+.icon-label {
+  font-size: 45px;
+  font-weight: normal;
+}
+
+/* --- Unchanged styles from your original file --- */
 .label {
   font-size: 24px;
   font-weight: bold;
@@ -48,63 +99,6 @@ window {
 .button-label {
   font-size: 24px;
   font-weight: bold;
-}
-
-.completelytrans {
-  background: none;
-}
-
-.button {
-  margin: 10px;
-}
-
-.button:hover {
-  background-color: $blue;
-  color: $crust;
-  transition-duration: 150ms;
-}
-
-.button:active {
-  background-color: $blue;
-  color: $crust;
-  transition-duration: 150ms;
-}
-
-.poweroff-button {
-  margin: 10px;
-}
-
-.poweroff-button:hover {
-  background-color: $red;
-  color: $crust;
-  transition-duration: 150ms;
-}
-
-.poweroff-button:active {
-  background-color: darken($red, 15%);
-  color: $crust;
-  transition-duration: 150ms;
-}
-
-.suspend-button {
-  margin: 10px;
-}
-
-.suspend-button:hover {
-  background-color: $lavender;
-  color: $crust;
-  transition-duration: 150ms;
-}
-
-.suspend-button:active {
-  background-color: darken($lavender, 15%);
-  color: $crust;
-  transition-duration: 150ms;
-}
-
-.icon-label {
-  font-size: 45px;
-  font-weight: normal;
 }
 
 .button_wallpaper {
@@ -120,10 +114,8 @@ window {
   transition-duration: 150ms;
 }
 
-/* --- Infobox changes as requested --- */
 .infobox {
   font-size: 25px;
-  /* Mantle color with 90% opacity */
   background-color: rgba(24, 24, 37, 0.9);
   padding: 5px;
   border-radius: 8px;

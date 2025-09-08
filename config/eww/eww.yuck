@@ -1,5 +1,6 @@
 (include "eww_widgets.yuck")
 
+;; Main bar, definition is unchanged but will use the new widget style
 (defwindow userinfo
   :monitor '[0]'
   :stacking "bg"
@@ -7,22 +8,27 @@
   :geometry (geometry
     :x "30"
     :y "30"
-    :width "100"
-    :height "100"
+    :height "75"
+    :width "250"
     :anchor "bottom right")
   (userinfobox)
 )
 
+;; Power menu, now opens in the foreground for proper layering
 (defwindow powermenu
   :monitor '[0]'
-  :stacking "bg"
+  :stacking "fg"
   :namespace "eww"
   :geometry (geometry
     :x "30"
     :y "30"
+    :height "50"
+    :width "250"
     :anchor "bottom right")
   (powermenu)
 )
+
+;; --- UNCHANGED WINDOWS ---
 
 (defwindow appmenubox
   :monitor '[0]'
@@ -40,10 +46,10 @@
   :stacking "bg"
   :namespace "eww"
   :geometry (geometry
-    :x "256"
-    :y "30"
-    :width "100"
-    :height "100"
+    :x "105"
+    :y "35"
+    :height "75"
+    :width "250"
     :anchor "bottom right")
   (closeappmenubox)
 )

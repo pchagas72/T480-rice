@@ -1,44 +1,36 @@
 (include "eww_vars.yuck")
 
+;; -- Main control bar --
 (defwidget userinfobox []
-  (centerbox :height "100" :width "300" :halign "center" :valign "center" :class "userinfo-parent" :orientation "h"
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "eww open appmenubox; eww open closeappmenubox" :class "button"
-        (label :class "icon-label"  :text "󰀻")
-      )
+  (box :class "userinfo-parent" :orientation "h" :spacing 5 :space-evenly true
+    (button :onclick "eww open appmenubox; eww open closeappmenubox" :class "button"
+      (label :class "icon-label"  :text "󰀻")
     )
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "eww open powermenu" :class "button"
-        (label :class "icon-label"  :text "⭘")
-      )
+    (button :onclick "eww open powermenu" :class "button"
+      (label :class "icon-label"  :text "⭘")
     )
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "$HOME/.config/eww/scripts/update_wallpaper.sh"  :class "button"
-        (label :class "icon-label"  :text "󰸉")
-      )
-      )
+    (button :onclick "$HOME/.config/eww/scripts/update_wallpaper.sh"  :class "button"
+      (label :class "icon-label"  :text "󰸉")
+    )
   )
 )
 
+;; -- Power Menu (now vertical) --
 (defwidget powermenu []
-  (centerbox :height "100" :width "300" :halign "center" :valign "center" :class "userinfo-parent" :orientation "h"
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "systemctl poweroff" :class "poweroff-button"
-        (label :class "icon-label"  :text "󰐥")
-      )
+  (box :class "container" :orientation "h" :spacing 5
+    (button :onclick "systemctl poweroff" :class "poweroff-button"
+      (label :class "icon-label"  :text "󰐥")
     )
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "eww close powermenu" :class "button"
-        (label :class "icon-label"  :text "⨯")
-      )
+    (button :onclick "eww close powermenu" :class "button"
+      (label :class "icon-label"  :text "⨯")
     )
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-      (button :onclick "systemctl suspend"  :class "suspend-button"
-        (label :class "icon-label"  :text "")
-      )
+    (button :onclick "systemctl suspend"  :class "suspend-button"
+      (label :class "icon-label"  :text "")
     )
   )
 )
+
+;; --- UNCHANGED WIDGETS ---
 
 (defwidget wallpapersbox []
     (box :height "350" :width "340" :class "container_borderless"
@@ -50,7 +42,7 @@
 
 (defwidget closewallpapersbox []
     (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
-        (button :onclick "eww close wallpapersbox closewallpapersbox" :class "button"
+       (button :onclick "eww close wallpapersbox closewallpapersbox" :class "button"
             (label :class "icon-label"  :text "")
         )
     )
@@ -65,18 +57,17 @@
     :orientation "v"
     :class "container"
         (box :height "200" :width "700" :halign "center" :valign "center" :class "container_borderless" :orientation "h"
-        (button :onclick "gimp & disown; eww close appmenubox; eww open closeappmenubox; toggle_eww.sh --close" :class "button" :height "100"
+        (button :onclick "gimp & disown; eww close appmenubox;
+ toggle_eww.sh --close" :class "button" :height "100"
             (label :class "icon-label"  :text "")
         )
         (button :onclick "spotify-launcher & disown; eww close appmenubox; toggle_eww.sh --close" :class "button" :height "100"
             (label :class "icon-label"  :text "")
         )
         (button :onclick "steam & disown; eww close appmenubox; toggle_eww.sh --close" :class "button" :height "100"
-            (label :class "icon-label"  :text "")
+             (label :class "icon-label"  :text "")
         )
         )
-
-
         (box :height "200" :width "700" :halign "center" :valign "center" :class "container_borderless" :orientation "h"
         (button :onclick "brave & disown; eww close appmenubox; toggle_eww.sh --close" :class "button" :height "100"
             (label :class "icon-label"  :text "󰖟")
@@ -84,7 +75,8 @@
         (button :onclick "qbittorrent & disown; eww close appmenubox; toggle_eww.sh --close" :class "button" :height "100"
             (label :class "icon-label"  :text "")
         )
-        (button :onclick "obs & disown; eww close appmenubox; toggle_eww.sh --close" :class "button" :height "100"
+        (button :onclick "obs & disown;
+ eww close appmenubox; toggle_eww.sh --close" :class "button" :height "100"
             (label :class "icon-label"  :text "")
         )
         )
@@ -92,10 +84,10 @@
 )
 
 (defwidget closeappmenubox []
-    (box :height "100" :width "113" :halign "center" :valign "center" :class "userinfo-child"
+    (box :height "75" :width "75" :halign "center" :valign "center" :class "userinfo-child"
         (button :onclick "eww close appmenubox closeappmenubox" :class "button"
             (label :class "icon-label"  :text "󰅗")
-        )
+         )
     )
 )
 
