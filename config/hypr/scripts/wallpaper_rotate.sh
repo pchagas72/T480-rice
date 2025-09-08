@@ -18,7 +18,7 @@ while true; do
         echo "All wallpapers shown. Resetting cycle."
         CURRENT_WALLPAPER=$(hyprctl hyprpaper listloaded | grep "$MONITOR" | awk -F', ' '{print $2}')
         
-        echo "$CURRENT_WALLPAPER" >> "$WALLPAPER_FILE"
+        echo "$CURRENT_WALLPAPER" > "$WALLPAPER_FILE"
 
         UNUSED_WALLPAPERS=$(comm -23 \
             <(find "$WALLPAPER_DIR" -type f | sort) \
