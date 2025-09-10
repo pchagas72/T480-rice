@@ -10,8 +10,9 @@ TODO:
 - Eww 
     - Change "current_time" to "system_info"
         - Add time to next wallpaper.
-        - Add everything that is on waybar.
+        - Add everything that is on waybar. (3/7)
     - Still need to make notification widgets.
+    - Find better way to organize infobox.
 
 - Waybar
 
