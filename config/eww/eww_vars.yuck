@@ -1,1 +1,2 @@
 (defpoll TIME :interval "1s" '~/.config/eww/scripts/date.sh')
+(defpoll SYSTEMINFO :interval "1s" '~/.config/eww/scripts/systeminfo.sh')
