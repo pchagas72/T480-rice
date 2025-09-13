@@ -73,7 +73,6 @@
 
 (defwidget infobox []
     (box :height "280" :width "320" :halign "center" :valign "center" :class "infobox" :orientation "v"
-        (label :markup TIME)
         (label :markup SYSTEMINFO)
     )
 )
