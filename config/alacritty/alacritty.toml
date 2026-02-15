@@ -1,5 +1,5 @@
 [font]
-size = 18
+size = 16
 
 [font.normal]
 family = "Scientifica"
@@ -9,38 +9,63 @@ style = "Regular"
 history = 10000
 
 [window]
-opacity = 1
+opacity = 0.95
 title = "Alacritty"
 
 [window.padding]
 x = 9
 y = 9
 
-# Catppuccin Mocha color scheme
+# BEGIN WAL
 [colors.primary]
-background = '#1e1e2e' # Base
-foreground = '#cdd6f4' # Text
+background = '#010615'
+foreground = '#cad1de'
 
 [colors.cursor]
-text = '#1e1e2e'       # Base
-cursor = '#f5e0dc'     # Rosewater
+text   = '#010615' # Apply background color to color of text inside cursor
+cursor = '#cad1de' # Apply foreground color to color of cursor
+
+[colors.vi_mode_cursor]
+text    = '#010615' # Same as above
+cursor  = '#cad1de'
+
+[colors.search.matches]
+foreground = '#010615' # Same as above
+background = '#cad1de' # Apply bright/white color to bg color of matching search
+
+[colors.search.focused_match]
+foreground = 'CellBackground'
+background = 'CellForeground'
+
+[colors.line_indicator]
+foreground = 'None'
+background = 'None'
+
+[colors.footer_bar]
+foreground = '#8d929b'
+background = '#cad1de'
+
+[colors.selection]
+text       = 'CellBackground'
+background = 'CellForeground'
 
 [colors.normal]
-black   = '#45475a' # Surface1
-red     = '#f38ba8' # Red
-green   = '#a6e3a1' # Green
-yellow  = '#f9e2af' # Yellow
-blue    = '#89b4fa' # Blue
-magenta = '#cba6f7' # Mauve
-cyan    = '#94e2d5' # Teal
-white   = '#bac2de' # Subtext1
+black   = '#010615'
+red     = '#0C33E2'
+green   = '#144EF9'
+yellow  = '#1C5EF2'
+blue    = '#2E6EFC'
+magenta = '#288EFC'
+cyan    = '#6091D1'
+white   = '#cad1de'
 
 [colors.bright]
-black   = '#585b70' # Surface2
-red     = '#f38ba8' # Red
-green   = '#a6e3a1' # Green
-yellow  = '#f9e2af' # Yellow
-blue    = '#89b4fa' # Blue
-magenta = '#cba6f7' # Mauve
-cyan    = '#94e2d5' # Teal
-white   = '#a6adc8' # Subtext0
+black   = '#8d929b'
+red     = '#0C33E2'
+green   = '#144EF9'
+yellow  = '#1C5EF2'
+blue    = '#2E6EFC'
+magenta = '#288EFC'
+cyan    = '#6091D1'
+white   = '#cad1de'
+# END WAL

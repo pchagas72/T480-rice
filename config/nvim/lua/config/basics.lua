@@ -1,5 +1,5 @@
 vim.opt.guicursor = ""
-vim.cmd.colorscheme "tokyonight-night"
+vim.cmd.colorscheme "pywal16"
 vim.diagnostic.config({ virtual_text = true })
 
 vim.opt.nu = true

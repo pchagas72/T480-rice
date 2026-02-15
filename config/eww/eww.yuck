@@ -28,8 +28,6 @@
   (powermenu)
 )
 
-;; --- UNCHANGED WINDOWS ---
-
 (defwindow appmenubox
   :monitor '[0]'
   :stacking "bg"

@@ -1,30 +1,44 @@
-/* Catppuccin Mocha Palette */
-$base: #1e1e2e;
-$mantle: #181825;
-$crust: #11111b;
-$text: #cdd6f4;
-$blue: #89b4fa;
-$mauve: #cba6f7;
-$red: #f38ba8;
-$lavender: #b4befe;
+/* Import Pywal colors */
+@import "/home/pedro/.cache/wal/colors.scss";
+
+/* * Map Pywal's generated palette to semantic variables.
+ * Pywal dynamically assigns 0-15 based on the dominant colors of the image.
+ */
+$bg-solid: $background;
+$bg-transparent: rgba($color0, 0.85); /* Smooth, tinted glass look */
+$text: $foreground;
+$shadow: rgba($color0, 0.7);
+
+/* * Standard Pywal color assignments:
+ * 1: Red, 2: Green, 3: Yellow, 4: Blue, 5: Magenta, 6: Cyan
+ */
+$red: $color1;
+$green: $color2;
+$yellow: $color3;
+$blue: $color4;
+$magenta: $color5;
+$cyan: $color6;
 
 $br: 12px;
+$border-width: 2px;
 
 * {
   all: unset;
   background: transparent;
   font-family: "scientifica";
+  color: $text;
 }
 
 window {
   background: transparent;
 }
 
+/* Base Containers */
 .container {
-  background-color: $mantle;
-  color: $text;
+  background-color: $bg-transparent;
+  border: $border-width solid $blue; /* Dynamic outer border */
   border-radius: $br;
-  box-shadow: 0 0 10px 2px $crust;
+  box-shadow: 0 4px 10px 2px $shadow;
 }
 
 .container_borderless {
@@ -32,57 +46,73 @@ window {
   color: $text;
 }
 
+/* User Info Bar */
 .userinfo-parent {
-  background-color: $mantle;
-  color: $text;
+  background-color: $bg-transparent;
+  border: $border-width solid $magenta; /* Contrast against standard containers */
   padding: 0 10px;
   border-radius: $br;
+  box-shadow: 0 4px 10px 2px $shadow;
 }
 
 .userinfo-child {
   color: $text;
 }
 
+/* Generic App & Action Buttons */
 .button {
   padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px;
   border-radius: $br;
-  transition: background-color 200ms ease-out, color 200ms ease-out;
+  border: 1px solid transparent;
+  transition: all 200ms ease-out;
 }
 
+/* Buttons glow with a dynamic color on hover */
 .button:hover {
   background-color: $blue;
-  color: $crust;
+  color: $bg-solid; /* Inverts text for readability */
+  border: 1px solid $cyan;
+  box-shadow: 0 0 8px 2px rgba($blue, 0.5);
 }
 
 .button:active {
-  background-color: darken($blue, 10%);
-  color: $crust;
+  background-color: $cyan;
+  color: $bg-solid;
 }
 
+/* Power Menu Buttons */
 .poweroff-button {
   margin: 10px;
-  transition: background-color 200ms ease-out;
+  padding: 8px;
   border-radius: $br;
+  transition: all 200ms ease-out;
+  border: 1px solid transparent;
 }
 
 .poweroff-button:hover {
   background-color: $red;
-  color: $crust;
+  color: $bg-solid;
+  border: 1px solid $yellow;
+  box-shadow: 0 0 8px 2px rgba($red, 0.5);
 }
 
 .suspend-button {
   margin: 10px;
+  padding: 8px;
   border-radius: $br - 4px;
-  transition: background-color 200ms ease-out;
+  transition: all 200ms ease-out;
+  border: 1px solid transparent;
 }
 
 .suspend-button:hover {
-  background-color: $lavender;
-  color: $crust;
+  background-color: $magenta;
+  color: $bg-solid;
+  border: 1px solid $blue;
+  box-shadow: 0 0 8px 2px rgba($magenta, 0.5);
 }
 
+/* Typography */
 .icon-label {
   font-size: 45px;
   border-radius: $br;
@@ -99,22 +129,28 @@ window {
   font-weight: bold;
 }
 
+/* Information Box */
+.infobox {
+  font-size: 25px;
+  background-color: $bg-transparent;
+  border-left: 4px solid $green; /* Thick dynamic accent line on the side */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 10px 2px $shadow;
+}
+
+/* Extras */
 .button_wallpaper {
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: center;
   margin: 10px;
+  border-radius: $br;
 }
 
 .button_wallpaper:hover {
   background-position: center;
   background-size: 110px;
   transition-duration: 150ms;
-}
-
-.infobox {
-  font-size: 25px;
-  background-color: rgba(24, 24, 37, 0.9);
-  padding: 5px;
-  border-radius: 8px;
+  box-shadow: 0 0 10px 2px rgba($color0, 0.8);
 }
