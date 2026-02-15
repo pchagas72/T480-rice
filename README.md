@@ -2,10 +2,8 @@
 
 Dotfiles for my laptop.
 
-![Desktop Blue Screenshot](./screenshots/blue_desktop.png)
+![Desktop Screenshot](./screenshots/desktop.png)
 ![Vim Blue Screenshot](./screenshots/blue_vim.png)
-![Desktop Purple Screenshot](./screenshots/purple_desktop.png)
-![Vim Purple Screenshot](./screenshots/purple_vim.png)
 
 TODO:
 
