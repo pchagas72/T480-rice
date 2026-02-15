@@ -1,155 +1,197 @@
+/* Import Pywal colors */
 @import url("/home/pedro/.cache/wal/colors-waybar.css");
 
-/* Catppuccin Mocha Palette */
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
-
-@define-color text #cdd6f4;
-@define-color subtext0 #a6adc8;
-
-@define-color blue #89b4fa;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color yellow #f9e2af;
-
+/* font declared */
 * {
-    font-family: 'GohuFont 11 Nerd Font Propo';
-    font-size: 12px;
-    padding: 0px;
-    background: transparent;
+  font-family: 'GohuFont 11 Nerd Font Propo';
+  font-size: 15px;
+}
+
+#custom-openbracket,
+#custom-closebracket {
+  margin: 0 5px;
 }
 
 window#waybar {
-    background-color: @background;
-    padding: 5px;
+  background-color: transparent;
+  border-bottom: 0;
+  color: @foreground;
+  transition: background-color 0.5s;
 }
 
-tooltip {
-    background-color: @background;
-    border: 1px solid @color1;
-    border-radius: 8px;
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
-#battery,
-#network,
-#clock,
-#custom-applauncher,
-#tray,
-#workspaces,
-#pulseaudio,
-#memory,
-#cpu,
-#backlight {
-    margin: 6px;
-    margin-right: 7px;
-    padding: 6px 10px;
-    color: @foreground;
-    transition-duration: 120ms;
+window#waybar.empty #window {
+  background-color: transparent;
 }
 
-#network:hover,
-#clock:hover,
-#tray:hover {
-    border-bottom: 2px solid @color1;
+/* configuring the modules */
+.modules-left {
+  margin: 10px 0 0 10px;
+  padding: 0 0 0 7px;
+  background-color: @background;
+  border: 2px solid @color4;
 }
 
-#battery,
-#pulseaudio,
-#backlight {
-    border: 2px solid;
-    border-radius: 8px;
+.modules-center {
+  margin: 10px 0 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @background;
+  border: 2px solid @color4;
 }
 
-#clock calendar {
-    background-color: @background;
-    border: 1px solid @color10;
-    border-radius: 8px;
+.modules-right {
+  margin: 10px 10px 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @background;
+  border: 2px solid @color4;
 }
 
-#window {
-    margin: 6px;
-    padding: 4px 8px;
-    color: @foreground;
-    transition-duration: 120ms;
+button {
+  border: none;
 }
 
-#pulseaudio:hover,
-#backlight:hover,
-#custom-applauncher:hover {
-    background-color: @color7;
-    color: @background;
-    transition-duration: 120ms;
-    border-radius: 8px;
+/* left island */
+
+/* menu pannel */
+#custom-arch,
+#custom-powerprofile,
+#custom-themeswitcher {
+  padding-right: 10px;
+  padding-left: 5px;
+  font-size: 15px;
+  border-radius: 8px;
 }
 
-#custom-applauncher {
-    font-weight: bold;
-    transition-duration: 120ms;
+#custom-arch:hover {
+  color: @color5;
 }
 
-#tray menu {
-    background-color: @color0;
-    color: @foreground;
-    padding: 4px;
-    border-radius: 8px;
+#custom-powerprofile:hover {
+  color: @color5;
 }
 
-#tray menu menuitem {
-    background-color: @background;
-    margin: 3px;
-    color: @foreground;
-    border-radius: 4px;
+#custom-themeswitcher:hover {
+  color: @color5;
 }
 
-#tray menu menuitem:hover {
-    background-color: @background;
-    color: @color7;
-    font-weight: bold;
-}
-
+/* workspace pannel */
 #workspaces button {
-    transition-duration: 100ms;
-    all: initial;
-    min-width: 0;
-    font-weight: bold;
-    color: @foreground;
-    margin-right: 0.2cm;
-    margin-left: 0.2cm;
+  min-width: 0;
+  padding: 0 8px 0 8px;
+  background-color: transparent;
+  color: @foreground;
+  border-radius: 0;
 }
 
 #workspaces button:hover {
-    transition-duration: 120ms;
-    color: @color1;
-}
-
-#workspaces button.focused {
-    color: @color1;
-    font-weight: bold;
+  background-color: @color8;
 }
 
 #workspaces button.active {
-    color: @color2;
-    font-weight: bold;
+  color: @background;
+  background-color: @foreground;
 }
 
 #workspaces button.urgent {
-    color: @yellow;
+  background-color: @color1;
 }
 
-#battery, #backlight {
+/* no idea what this does */
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
+}
+
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
+}
+
+/* media player */
+#mpris {
+  margin: 0 0 0 5px;
+  padding: 0 9px;
+  background-color: @background;
+  color: @foreground;
+}
+
+#mpris.playing {
+  background-color: @color2;
+  border-radius: 2px;
+  color: @background;
+}
+
+/* center module  */
+#window {
+  padding: 0 5px;
+}
+
+/* Right Island */
+
+/* module general styles */
+#clock,
+#battery,
+#cpu,
+#memory,
+#custom-clipboard,
+#custom-bluetooth,
+#network {
+  padding: 0 10px;
+}
+
+#clock:hover,
+#battery:hover,
+#custom-cpu:hover,
+#custom-clipboard:hover,
+#custom-bluetooth:hover,
+#network:hover,
+#idle_inhibitor:hover,
+#custom-swaync:hover,
+#backlight:hover,
+#wireplumber:hover {
+  color: @color5;
+}
+
+#idle_inhibitor {
+  padding: 0 10px 0 0;
+}
+
+#custom-powerprofile {
+  padding: 0 8px 0 4px;
+}
+
+/* Remaining Modules */
+#backlight,
+#wireplumber {
+  padding: 0 5px;
+}
+
+#wireplumber.muted {
+  background-color: @color3;
+}
+
+#custom-swaync {
+  padding: 0 10px 0 5px;
+  font-size: 16px;
+  color: @foreground;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: @color6;
+  color: @background;
+}
+
+#battery.critical:not(.charging) {
+  background-color: @color1;
+  color: @foreground;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: @color8;
     color: @foreground;
-}
-
-#backlight.critical_high,
-#backlight.critical_low,
-#pulseaudio.warning,
-#pulseaudio.critical,
-#pulseaudio.urgent,
-#battery.warning,
-#battery.critical,
-#battery.urgent,
-#cpu.warning,
-#cpu.critical {
-    color: @color10;
+  }
 }
