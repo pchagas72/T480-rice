@@ -1,197 +1,120 @@
 /* Import Pywal colors */
 @import url("/home/pedro/.cache/wal/colors-waybar.css");
 
-/* font declared */
 * {
-  font-family: 'GohuFont 11 Nerd Font Propo';
-  font-size: 15px;
-}
-
-#custom-openbracket,
-#custom-closebracket {
-  margin: 0 5px;
+    font-family: 'Inconsolata Light', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
 }
 
 window#waybar {
-  background-color: transparent;
-  border-bottom: 0;
-  color: @foreground;
-  transition: background-color 0.5s;
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-/* configuring the modules */
-.modules-left {
-  margin: 10px 0 0 10px;
-  padding: 0 0 0 7px;
-  background-color: @background;
-  border: 2px solid @color4;
-}
-
-.modules-center {
-  margin: 10px 0 0 0;
-  padding: 0 10px 0 10px;
-  background-color: @background;
-  border: 2px solid @color4;
+/* The Islands */
+.modules-left, .modules-center, .modules-right {
+    background-color: @background;
+    border: 2px solid @color4; /* Uses your Pywal accent color */
+    border-radius: 0px;
+    padding: 5px 15px;
 }
 
 .modules-right {
-  margin: 10px 10px 0 0;
-  padding: 0 10px 0 10px;
-  background-color: @background;
-  border: 2px solid @color4;
+    padding-right: 20px;
 }
 
-button {
-  border: none;
+/* Hover Effects */
+button:hover {
+    background: inherit;
+    border-color: @color2;
 }
 
-/* left island */
-
-/* menu pannel */
-#custom-arch,
-#custom-powerprofile,
-#custom-themeswitcher {
-  padding-right: 10px;
-  padding-left: 5px;
-  font-size: 15px;
-  border-radius: 8px;
-}
-
-#custom-arch:hover {
-  color: @color5;
-}
-
-#custom-powerprofile:hover {
-  color: @color5;
-}
-
-#custom-themeswitcher:hover {
-  color: @color5;
-}
-
-/* workspace pannel */
+/* Workspace Styling */
 #workspaces button {
-  min-width: 0;
-  padding: 0 8px 0 8px;
-  background-color: transparent;
-  color: @foreground;
-  border-radius: 0;
+    padding: 0 5px;
+    color: @foreground;
+    background-color: transparent;
+    border-radius: 0px;
+    margin: 0 2px;
 }
 
 #workspaces button:hover {
-  background-color: @color8;
+    color: @color2;
+    background-color: @background;
 }
 
 #workspaces button.active {
-  color: @background;
-  background-color: @foreground;
+    color: @color4;
+    border-bottom: 2px solid @color4;
 }
 
 #workspaces button.urgent {
-  background-color: @color1;
+    color: @color1;
 }
 
-/* no idea what this does */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
-}
-
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
-}
-
-/* media player */
-#mpris {
-  margin: 0 0 0 5px;
-  padding: 0 9px;
-  background-color: @background;
-  color: @foreground;
-}
-
-#mpris.playing {
-  background-color: @color2;
-  border-radius: 2px;
-  color: @background;
-}
-
-/* center module  */
-#window {
-  padding: 0 5px;
-}
-
-/* Right Island */
-
-/* module general styles */
+/* Module Styling */
 #clock,
 #battery,
 #cpu,
 #memory,
-#custom-clipboard,
-#custom-bluetooth,
-#network {
-  padding: 0 10px;
-}
-
-#clock:hover,
-#battery:hover,
-#custom-cpu:hover,
-#custom-clipboard:hover,
-#custom-bluetooth:hover,
-#network:hover,
-#idle_inhibitor:hover,
-#custom-swaync:hover,
-#backlight:hover,
-#wireplumber:hover {
-  color: @color5;
-}
-
-#idle_inhibitor {
-  padding: 0 10px 0 0;
-}
-
-#custom-powerprofile {
-  padding: 0 8px 0 4px;
-}
-
-/* Remaining Modules */
 #backlight,
-#wireplumber {
-  padding: 0 5px;
+#network,
+#pulseaudio,
+#custom-themeswitcher,
+#tray,
+#mpris {
+    padding: 0 8px;
+    color: @foreground;
 }
 
-#wireplumber.muted {
-  background-color: @color3;
+#custom-themeswitcher {
+    color: @color5;
+    padding-right: 15px;
+    margin-right: 10px;
+    border-right: 2px solid @color4; /* Separator */
 }
 
-#custom-swaync {
-  padding: 0 10px 0 5px;
-  font-size: 16px;
-  color: @foreground;
-}
-
-#battery.charging,
-#battery.plugged {
-  background-color: @color6;
-  color: @background;
+/* Battery States */
+#battery.charging {
+    color: @color2;
 }
 
 #battery.critical:not(.charging) {
-  background-color: @color1;
-  color: @foreground;
-  animation: blink 0.5s steps(12) infinite alternate;
+    color: @color1;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-@keyframes blink {
-  to {
-    background-color: @color8;
+/* Network */
+#network.disconnected {
+    color: @color1;
+}
+
+/* Pulseaudio */
+#pulseaudio.muted {
+    color: @color3;
+}
+
+/* Tooltip Styling */
+tooltip {
+    background: @background;
+    border: 2px solid @color4;
+    border-radius: 0px;
+}
+
+tooltip label {
     color: @foreground;
-  }
+}
+
+/* Animations */
+@keyframes blink {
+    to {
+        color: @foreground;
+    }
 }
