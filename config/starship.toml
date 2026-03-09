@@ -1,0 +1,19 @@
+# Get rid of the newline at the start of the prompt
+add_newline = false
+
+# Minimal format: just the lambda and the directory
+format = """$character$directory$git_branch"""
+
+[character]
+success_symbol = "[λ ](bold white)"
+error_symbol = "[λ ](bold red)"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+style = "italic gray"
+format = "on [$symbol$branch]($style) "
