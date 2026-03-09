@@ -1,0 +1,227 @@
+#+TITLE: My Emacs Configuration
+#+AUTHOR: https://pedrochagas.com
+#+PROPERTY: header-args:emacs-lisp :tangle yes
+
+* Core Settings
+Set up package management (MELPA) and define custom load paths for scripts.
+
+#+begin_src emacs-lisp
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (package-initialize)
+  (add-to-list 'load-path "~/.emacs.d/lisp/") ;; Scripts
+#+end_src
+
+* Appearance
+** UI Elements
+Removing emacs bs
+
+#+begin_src emacs-lisp
+  (setq inhibit-startup-message t) ;; Hides startup message
+  (scroll-bar-mode -1)             ;; No bar
+  (tool-bar-mode -1)               ;; No tool bullshit
+  (menu-bar-mode -1)               ;; No menu bullshit
+
+  ;; Additional window customizations
+  (set-fringe-mode 10)             ;; Some padding
+  (add-to-list 'default-frame-alist '(alpha-background . 85)) ; Opacity
+#+end_src
+
+** Line Numbers
+Enable relative line numbers globally.
+
+#+begin_src emacs-lisp
+  (column-number-mode 1)
+  (global-display-line-numbers-mode)
+  (setq display-line-numbers-type 'relative)
+#+end_src
+
+** Startup page
+#+begin_src emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook))
+  (setq dashboard-banner-logo-title "You should enjoy the little detours to the fullest.")
+  (setq dashboard-center-content t)
+  (setq dashboard-startup-banner "/home/pedro/.emacs.d/image.png")
+  (setq dashboard-items '((recents . 5)))
+  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+#+end_src
+
+** Theme and Fonts
+Configure the colorscheme and typography using ~ewal~ and Spacemacs themes.
+
+#+begin_src emacs-lisp
+  (use-package ewal
+    :init (setq ewal-use-built-in-always-p nil
+                ewal-use-built-in-on-failure-p t
+                ewal-built-in-palette "sexy-material"))
+
+  (use-package ewal-spacemacs-themes
+    :init (progn
+            (setq spacemacs-theme-underline-parens t
+                  my:font (font-spec
+                           :family "SauceCodePro Nerd Font"
+                           :weight 'semi-bold
+                           :size 13.0))
+            (show-paren-mode +1)
+            (global-hl-line-mode)
+            (set-frame-font my:font nil t)
+            (add-to-list  'default-frame-alist
+                          `(font . ,(font-xlfd-name my:font))))
+    :config (progn
+              (load-theme 'ewal-spacemacs-modern t)
+              (enable-theme 'ewal-spacemacs-modern)))
+
+  (use-package ewal-evil-cursors
+    :after (ewal-spacemacs-themes)
+    :config (ewal-evil-cursors-get-colors
+             :apply t :spaceline t))
+
+  (use-package spaceline
+    :after (ewal-evil-cursors winum)
+    :init (setq powerline-default-separator nil)
+    :config (spaceline-spacemacs-theme))
+
+  (defun my/reload-ewal-theme ()
+    "Reload ewal colors and re-apply the Spacemacs theme."
+    (interactive)
+    ;; Check which function your version of ewal uses
+    (if (fboundp 'ewal-load-colors)
+	(ewal-load-colors)
+      (ewal-load-wal-colors))
+    
+    (load-theme 'ewal-spacemacs-modern t)
+    (enable-theme 'ewal-spacemacs-modern)
+    (message "ewal theme updated on the fly!"))
+
+  (global-set-key (kbd "C-c r") 'my/reload-ewal-theme)
+    #+end_src
+
+* Completion Framework
+** Vertico
+Makes finding buffers and files significantly faster by filtering as you type.
+
+#+begin_src emacs-lisp
+  (use-package vertico
+    :ensure t
+    :init
+    (vertico-mode))
+#+end_src
+
+* Keybindings
+** Evil Mode
+Set up Vim emulation.
+
+#+begin_src emacs-lisp
+  (setq evil-want-C-u-scroll t)    ;; Enables ctrl-u
+  (require 'evil)                  ;; Require vim keybinds
+  (evil-mode 1)                    ;; Enable vim keybinds
+#+end_src
+
+** Zen Mode
+Custom keybinding for distraction-free editing.
+
+#+begin_src emacs-lisp
+  (require 'zen-mode)
+  (global-set-key (kbd "C-M-z") 'zen-mode)
+#+end_src
+
+* Org Mode
+** Visual Enhancements
+Make org-mode look like a proper document instead of a raw text file.
+
+#+begin_src emacs-lisp
+  (use-package org
+    :hook (org-mode . org-indent-mode) ;; Visually indents content under headings
+    :custom
+    (org-hide-emphasis-markers t)      ;; Hides the *, /, = markers around formatted text
+    (org-ellipsis " ▾")                ;; Replaces the folded '...' with a clean arrow
+    (org-src-fontify-natively t)       ;; Ensures your code blocks are colorized
+    (org-src-tab-acts-natively t)      ;; Makes tab work normally inside code blocks
+    (org-startup-folded 'content))     ;; Start with just headings visible
+
+  (use-package org-superstar
+    :ensure t
+    :after org
+    :hook (org-mode . org-superstar-mode)
+    :custom
+    (org-superstar-headline-bullets-list '("◉" "○" "◈" "◇" "▸"))
+    (org-superstar-item-bullet-alist '((?* . ?•)
+                                       (?+ . ?▸)
+                                       (?- . ?–))))
+#+end_src
+* Development
+** In-Buffer Completion (Corfu)
+Popup auto-completion for writing code.
+
+#+begin_src emacs-lisp
+  (use-package corfu
+    :ensure t
+    :custom
+    (corfu-auto t)               ;; Enable auto-completion
+    (corfu-auto-delay 0.1)       ;; Keep popups snappy
+    (corfu-auto-prefix 2)        ;; Trigger after 2 characters
+    :init
+    (global-corfu-mode))
+#+end_src
+
+** Language Server Protocol (Eglot)
+Built-in LSP client for intelligent code navigation.
+
+#+begin_src emacs-lisp
+  (use-package eglot
+    :ensure t
+    :hook ((c-mode . eglot-ensure)
+           (c++-mode . eglot-ensure)
+           (python-mode . eglot-ensure)))
+#+end_src
+
+** Syntax Checking (Flymake)
+Real-time error and warning highlighting, seamlessly integrated with Eglot.
+
+#+begin_src emacs-lisp
+  (use-package flymake
+    :hook (prog-mode . flymake-mode)
+    :config
+    ;; Optional: slightly tweak how errors are displayed in the minibuffer
+    (setq help-at-pt-display-when-idle t)
+    
+    ;; Evil-mode bindings for quickly jumping between diagnostics
+    (with-eval-after-load 'evil
+      (define-key evil-normal-state-map (kbd "] d") 'flymake-goto-next-error)
+      (define-key evil-normal-state-map (kbd "[ d") 'flymake-goto-prev-error)
+      ;; Use leader key or a custom bind to list all errors in a buffer
+      (define-key evil-normal-state-map (kbd "C-c d") 'flymake-show-buffer-diagnostics)))
+#+end_src
+
+* Auto-Generated Variables
+These are variables automatically generated by Emacs' customization UI.
+
+#+begin_src emacs-lisp
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(package-selected-packages '(evil ewal-evil-cursors ewal-spacemacs-themes)))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+#+end_src
+
+* Terminal Emulator
+** Vterm
+A fast, modern terminal emulator that actually understands modern shell escape sequences.
+
+#+begin_src emacs-lisp
+  (use-package vterm
+    :ensure t
+    :custom
+    (vterm-max-scrollback 10000)
+    (vterm-kill-buffer-on-exit t)) ;; Automatically close the window when type 'exit'
+#+end_src
